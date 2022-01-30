@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.input-group-text {
+    height: 100%;
+    width: 40px;
+}
+
+.input-group {
+    margin: 5px;
+}
+
+input.ng-touched.ng-invalid {
+    border-color: #dc3545;
+}
+
+input.ng-valid {
+    border-color: #2a7452;
+}
+
+.valid-icon {
+    color: #2a7452;
+}
+
+.invalid-icon {
+    color: #dc3545;
+}
+
+.mat-form-field{
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.container-form {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+}
+
+.nav-item {
+    text-decoration: none;
+}
+
+.mat-table{
+    width: 100%;
+}
+
+.mat-elevation-z8{
+    padding: 10px;
+}

@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>Editar libro</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="formEditLibro">
+    <div>
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>Titulo</mat-label>
+        <input matInput type="text" 
+        name="titulo" formControlName="titulo">
+        <mat-error *ngIf="
+        formEditLibro.controls['titulo']?.errors?.['required']">El titulo es requerido</mat-error>
+      </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field class="fullWidth" appearance="outline">
+          <mat-label>Año</mat-label>
+          <input matInput type="text" 
+          name="ano" formControlName="ano">
+          <mat-error *ngIf="
+          formEditLibro.controls['ano']?.errors?.['required']">El año es requerido</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="fullWidth" appearance="outline">
+          <mat-label>Genero</mat-label>
+          <input matInput type="text" 
+          name="genero" formControlName="genero">
+          <mat-error *ngIf="
+          formEditLibro.controls['genero']?.errors?.['required']">El genero es requerido</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="fullWidth" appearance="outline">
+          <mat-label>Numero Paginas</mat-label>
+          <input matInput type="text" 
+          name="numeroPaginas" formControlName="numeroPaginas">
+          <mat-error *ngIf="
+          formEditLibro.controls['numeroPaginas']?.errors?.['required']">El numero de paginas es requerido</mat-error>
+        </mat-form-field>
+      </div>
+  </form>
+</div>
+
+<div class="mt-5" mat-dialog-actions>
+  <button mat-raised-button color="primary" 
+  [disabled]="formEditLibro.dirty && formEditLibro.errors" (click)="actualizarLibro()"
+    cdkFocusInitial>Actualizar</button>
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+
+</div>

@@ -1,0 +1,36 @@
+<div class="container-form">
+    <form [formGroup]="formLibro" (ngSubmit)="guardarLibro(formLibro)">
+        <mat-form-field appearance="standard">
+            <mat-label>Titulo</mat-label>
+            <input matInput maxlength="255" type="text" placeholder="Ingrese el titulo del libro" formControlName="titulo" #tituloInput>
+            <mat-hint>Min caracter 255: {{ tituloInput.value.length }}/255</mat-hint>
+            <mat-error>El titulo es requerido.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+            <mat-label>Año</mat-label>
+            <input matInput type="number" maxlength="4" placeholder="Ingrese el año del libro" formControlName="ano" #anoInput>
+            <mat-hint>Min caracter 4: {{ anoInput.value.length }}/4</mat-hint>
+            <mat-error>El año es requerido.</mat-error>
+            <mat-error *ngIf="(formLibro.get('ano'))?.errors?.['maxLength']">El año debe ser de 4 caracteres</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+            <mat-label>Genero</mat-label>
+            <input matInput type="text" maxlength="255" placeholder="Ingrese el genero del libro" formControlName="genero" #generoInput>
+            <mat-hint>Min caracter 255: {{ anoInput.value.length }}/255</mat-hint>
+            <mat-error>El genero es requerido.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+            <mat-label>Numero Paginas</mat-label>
+            <input matInput type="number" maxlength="9999" placeholder="Ingrese el genero del libro" formControlName="numeroPaginas" #numeroPaginasInput>
+            <mat-hint>Min caracter 9999: {{ numeroPaginasInput.value.length }}/9999</mat-hint>
+            <mat-error>El numero de paginas es requerido.</mat-error>
+        </mat-form-field>
+
+        <div mat-dialog-actions align="end">
+            <button mat-raised-button color="secondary" type="submit" [disabled]="!formLibro.valid">Submit</button>
+        </div>
+    </form>
+</div>
